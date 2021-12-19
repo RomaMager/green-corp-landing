@@ -2,9 +2,11 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
     padding: 20px;
-
+    background-color: #fff;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
 }
 body{
     font-family: 'Raleway', sans-serif;
@@ -42,7 +44,14 @@ button:hover{
 .about_image {
     width: 500px;
 }
+@keyframes rotation {
+    0%{ transform: rotate(0degS); 
+    }
+    100%{transform: rotate(360deg);}
+}
 .about_sun-image {
+    animation: rotation 10s infinite linear;
+    position: absolute;
     width: 100px;
     height: 100px;
 } 
@@ -146,26 +155,94 @@ footer{
 }
 .footer__container{
     display: flex;
-    align-items: center;
     justify-content: center;
 }
-.footer__copyright p{
-    padding-top: 40px;
+.footer__copyright{
+    margin-top: 40px;
     text-align: center;
     opacity: 0.5;
 }
 .footer__group{
     padding-right: 80px;
 }
-.footer__links h3{
+footer h3{
     font-size: 16px;
     opacity: 0.7;
     margin-bottom: 30px;
 }
-div.footer__links{
+.footer__links{
     display: flex;
     flex-direction: column;
 }
 .footer__links a{
     margin-bottom: 15px;
 }
+@media (max-width: 1024px) {
+    .about {
+        padding: 115px 20px;
+    }
+  
+    .about h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+  
+    .about__image {
+        width: 280px;
+    }
+  
+    .about__sun-image {
+        width: 75px;
+        height: 75px;
+    }
+ }
+  
+@media (max-width: 720px) {
+    header {
+        padding: 10px;
+    }
+  
+    .header__logo {
+        height: 20px;
+    }
+  
+    header a {
+        margin-right: 10px;
+    }
+  
+    .about {
+        flex-direction: column-reverse;
+        padding: 50px 10px;
+    }
+  
+    .about h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+  
+    .about__image {
+        width: 280px;
+    }
+  
+    .about__sun-image {
+        width: 75px;
+        height: 75px;
+    }
+  
+    .form {
+        padding: 50px 10px;
+    }
+  
+    .form h1 {
+        font-size: 36px;
+    }
+  
+    footer {
+        padding: 50px 10px;
+    }
+  
+    .footer__container {
+        flex-direction: column;
+    }
+ }
+ 
